@@ -13,10 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Aula-01"
-include(":app")
-include(":app")
-include(":app")
-include(":app")
+rootProject.name = "SistemaPedidosRestaurante"
 include(":app")
  
