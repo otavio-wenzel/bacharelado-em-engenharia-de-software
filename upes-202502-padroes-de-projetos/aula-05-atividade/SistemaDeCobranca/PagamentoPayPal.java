@@ -11,7 +11,7 @@ public class PagamentoPayPal implements Pagamento {
         if (email != null && email.contains("@")) {
             return "Pagamento de R$" + valor + " aprovado via PayPal (" + email + ")";
         } else {
-            return "Erro: saldo insuficiente na carteira.";
+            return "Erro: e-mail inválido.";
         }
     }
     
