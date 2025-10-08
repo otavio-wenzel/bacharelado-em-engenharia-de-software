@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Visita Digital Exclusivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Container do cartão para perspectiva 3D */
+        .card-container {
+            perspective: 1000px;
+        }
+
+        /* Efeito de virar */
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .card-container:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Posicionamento da frente e do verso */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            border-radius: 1rem; /* 16px */
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        /* Gradiente dourado */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fde047, #b45309);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gold-gradient-border {
+             border-color: #ca8a04;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-sm h-64 card-container">
+        <div class="card-inner">
+            <!-- Frente do Cartão -->
+            <div class="card-front bg-purple-800 shadow-2xl flex flex-col items-center justify-center p-6 border border-gray-700">
+                <div class="text-center">
+                     <!-- Coloque seu logo aqui -->
+                    <i class="fas fa-shield-halved text-7xl gold-gradient-text"></i>
+                    <h1 class="text-3xl font-bold text-white mt-4">[Angelica Rocha]</h1>
+                    <p class="text-gray-400 text-lg">Consultor de Seguros de Luxo</p>
+                </div>
+                 <p class="text-black-500 text-xs absolute bottom-4 animate-pulse">Passe o mouse para ver os detalhes</p>
+            </div>
+
+            <!-- Verso do Cartão -->
+            <div class="card-back bg-gray-800 shadow-2xl p-6 text-white border border-gray-700 flex flex-col justify-center">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold gold-gradient-text">[Seu Nome]</h2>
+                    <p class="text-gray-300">Consultor de Seguros de Luxo</p>
+                </div>
+                
+                <div class="space-y-4 text-left">
+                    <a href="tel:+5511999999999" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-phone-alt w-6 text-center text-yellow-500"></i>
+                        <span class="ml-3">(XX) XXXX-XXXX</span>
+                    </a>
+                    <a href="mailto:contato@seusite.com" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-envelope w-6 text-center text-yellow-500"></i>
+                        <span class="ml-3">email@dominioexclusivo.com</span>
+                    </a>
+                    <a href="https://www.seusite.com" target="_blank" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-globe w-6 text-center text-yellow-500"></i>
+                        <span class="ml-3">www.seusite.com.br</span>
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-700 mt-6 pt-4 flex justify-center space-x-6">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-yellow-500 transition-colors">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-yellow-500 transition-colors">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-yellow-500 transition-colors">
+                        <i class="fab fa-whatsapp fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
